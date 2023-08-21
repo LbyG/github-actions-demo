@@ -19,7 +19,7 @@ jobs:
   build-and-deploy2:
     runs-on: ubuntu-latest
     needs: [build-and-deploy]
-    if: failure()
+    if: success()
     steps:
     - name: Install and Build
       run: pwd
