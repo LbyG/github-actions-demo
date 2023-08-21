@@ -21,3 +21,24 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: build
+  build-and-deploy1:
+    runs-on: ubuntu-latest
+    needs: [build-and-deploy]
+    if: failure()
+    steps:
+    - name: Install and Build
+      run: pwd
+  build-and-deploy2:
+    runs-on: ubuntu-latest
+    needs: [build-and-deploy]
+    if: success()
+    steps:
+    - name: Install and Build
+      run: pwd
+  build-and-deploy3:
+    runs-on: ubuntu-latest
+    needs: [build-and-deploy2]
+    if: success()
+    steps:
+    - name: Install and Build
+      run: pwd
