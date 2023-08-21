@@ -8,32 +8,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install and Build
-      run: pwd
+      run: sleep 30s
   build-and-deploy1:
     runs-on: ubuntu-latest
     needs: [build-and-deploy]
-    if: failure()
+    if: cancelled()
     steps:
     - name: Install and Build
-      run: pwd
+      run: sleep 30s
   build-and-deploy2:
     runs-on: ubuntu-latest
     needs: [build-and-deploy1]
     if: always()
     steps:
     - name: Install and Build
-      run: pwd
+      run: sleep 30s
+    - name: run in cancelled
+      if: cancelled
+      run: sleep 30s
   build-and-deploy3:
     runs-on: ubuntu-latest
     needs: [build-and-deploy1]
     if: always()
     steps:
     - name: Install and Build
-      run: pwd
+      run: sleep 30s
+    - name: run in cancelled
+      if: cancelled
+      run: sleep 30s
   build-and-deploy4:
     runs-on: ubuntu-latest
     needs: [build-and-deploy2, build-and-deploy3]
-    if: success()
+    if: cancelled()
     steps:
     - name: Install and Build
-      run: pwd
+      run: sleep 30s
