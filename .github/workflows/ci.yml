@@ -21,9 +21,12 @@ jobs:
     needs: [build-and-deploy1]
     if: always()
     steps:
+    - name: run in cancelled
+      if: cancelled()
+      run: sleep 30s
     - name: Install and Build
       run: sleep 30s
-    - name: run in cancelled
+    - name: run in cancelled1
       if: cancelled()
       run: sleep 30s
   build-and-deploy3:
@@ -31,9 +34,12 @@ jobs:
     needs: [build-and-deploy1]
     if: always()
     steps:
+    - name: run in cancelled
+      if: cancelled()
+      run: sleep 30s
     - name: Install and Build
       run: sleep 30s
-    - name: run in cancelled
+    - name: run in cancelled1
       if: cancelled()
       run: sleep 30s
   build-and-deploy4:
