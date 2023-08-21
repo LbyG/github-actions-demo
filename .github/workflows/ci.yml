@@ -18,14 +18,21 @@ jobs:
       run: pwd
   build-and-deploy2:
     runs-on: ubuntu-latest
-    needs: [build-and-deploy]
-    if: success()
+    needs: [build-and-deploy1]
+    if: always()
     steps:
     - name: Install and Build
       run: pwd
   build-and-deploy3:
     runs-on: ubuntu-latest
-    needs: [build-and-deploy1, build-and-deploy2]
+    needs: [build-and-deploy1]
+    if: always()
+    steps:
+    - name: Install and Build
+      run: pwd
+  build-and-deploy4:
+    runs-on: ubuntu-latest
+    needs: [build-and-deploy2, build-and-deploy3]
     if: success()
     steps:
     - name: Install and Build
