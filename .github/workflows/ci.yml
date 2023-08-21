@@ -24,7 +24,7 @@ jobs:
     - name: Install and Build
       run: sleep 30s
     - name: run in cancelled
-      if: cancelled
+      if: cancelled()
       run: sleep 30s
   build-and-deploy3:
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
     - name: Install and Build
       run: sleep 30s
     - name: run in cancelled
-      if: cancelled
+      if: cancelled()
       run: sleep 30s
   build-and-deploy4:
     runs-on: ubuntu-latest
