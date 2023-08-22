@@ -19,7 +19,7 @@ jobs:
   job3:
     runs-on: ubuntu-latest
     needs: [job1, job2]
-    if: needs.job2.outputs.output1 == 'hello'
+    if: failure() && needs.job2.outputs.output1 == 'hello'
     steps:
     - name: sleep1
       run: sleep 30s
