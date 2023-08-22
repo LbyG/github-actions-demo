@@ -12,26 +12,20 @@ jobs:
   build-and-deploy1:
     runs-on: ubuntu-latest
     needs: [build-and-deploy]
-    if: cancelled()
+    if: failure()
     steps:
     - name: sleep1
       run: sleep 30s
   build-and-deploy2:
     runs-on: ubuntu-latest
     needs: [build-and-deploy1]
-    if: failure()
+    if: cancelled()
     steps:
-    - name: run in cancelled
-      if: cancelled()
-      run: sleep 30s
     - name: Install and Build
-      run: sleep 30s
-    - name: run in cancelled1
-      if: cancelled()
       run: sleep 30s
   build-and-deploy3:
     runs-on: ubuntu-latest
-    needs: [build-and-deploy1]
+    needs: [build-and-deploy2]
     if: failure()
     steps:
     - name: run in cancelled
