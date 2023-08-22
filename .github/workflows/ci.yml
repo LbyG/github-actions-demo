@@ -14,7 +14,11 @@ jobs:
     needs: [build-and-deploy]
     if: cancelled()
     steps:
-    - name: Install and Build
+    - name: sleep1
+      run: sleep 30s
+    - name: sleep2
+      run: sleep 30s
+    - name: sleep3
       run: sleep 30s
   build-and-deploy2:
     runs-on: ubuntu-latest
