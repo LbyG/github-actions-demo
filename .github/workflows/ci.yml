@@ -6,8 +6,6 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    env:
-      MY_NAME: ${{ vars.my_name }}
     steps:
     - name: Install and Build
       run: echo vars defined name is $MY_NAME
