@@ -10,7 +10,7 @@ jobs:
       MY_NAME: ${{ VARS.my_name }}
     steps:
     - name: Install and Build
-      run: echo vars defined name is $MY_NAME
+      run: echo vars defined name is env:$MY_NAME
   job2:
     runs-on: windows-latest
     outputs:
