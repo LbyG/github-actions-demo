@@ -7,10 +7,10 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     env:
-      GITHUB_EVENT_NAME: github.EVENT_NAME
+      GITHUB_EVENT_NAME: ${{ github.EVENT_NAME }}
     steps:
     - name: Install and Build
-      run: echo "GITHUB_EVENT_NAME = $GITHUB_EVENT_NAME"
+      run: echo github event name is $GITHUB_EVENT_NAME
   job2:
     runs-on: ubuntu-latest
     outputs:
