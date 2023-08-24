@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [job1, job2]
     if: NEEDS.JOB2.OUTPUTS.OUTPUT1 == 'hello'
+    env:
+      JOB2_OUTPUT: ${{ NEEDS.JOB2.OUTPUTS.OUTPUT1 }}
     steps:
     - name: sleep1
-      run: sleep 30s
+      run: echo job2 output1 is $JOB2_OUTPUT
