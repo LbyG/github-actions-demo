@@ -6,9 +6,11 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_EVENT_NAME: github.event_name
     steps:
     - name: Install and Build
-      run: ls
+      run: echo "GITHUB_EVENT_NAME = $GITHUB_EVENT_NAME"
   job2:
     runs-on: ubuntu-latest
     outputs:
