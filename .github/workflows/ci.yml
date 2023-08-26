@@ -10,5 +10,5 @@ jobs:
       MY_NAME: "env"
     steps:
     - name: test always() cancelled
-      if: always()
+      if: success()
       run: sleep 300s
