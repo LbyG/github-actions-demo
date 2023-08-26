@@ -5,25 +5,14 @@ on:
       - master
 jobs:
   job1:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:
-      MY_NAME: ${{ VARS.my_name }}
+      MY_NAME: "env"
     steps:
-    - name: Install and Build
-      run: echo vars defined name is env:$MY_NAME
-  job2:
-    runs-on: windows-latest
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
-    steps:
-    - id: step1
-      run: echo "test=hello" >> "$GITHUB_OUTPUT"
-  job3:
-    runs-on: windows-latest
-    needs: [job1, job2]
-    if: NEEDS.JOB2.OUTPUTS.OUTPUT1 == 'hello'
-    env:
-      JOB2_OUTPUT: ${{ NEEDS.JOB2.OUTPUTS.OUTPUT1 }}
-    steps:
-    - name: sleep1
-      run: echo job2 output1 is $JOB2_OUTPUT
+    - name: failed step
+      run: lsssss
+    - name: test success() default
+      run: ls
+    - name: test success() default when expression not status-check-func
+      if: env.MY_NAME == "env"
+      run: ls
