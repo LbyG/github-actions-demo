@@ -9,14 +9,6 @@ jobs:
     env:
       MY_NAME: "env"
     steps:
-    - name: expect success
-      if: failure()
-      run: ls
-    - name: expect skipped
-      if: env.MY_NAME != 'env'
-      run: ls
-    - name: test skipped step for default success()
-      run: ls
-    - name: test skipped step for success()
-      if: success()
-      run: ls
+    - name: test always() cancelled
+      if: always()
+      run: sleep 300s
