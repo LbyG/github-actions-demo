@@ -10,6 +10,7 @@ jobs:
       MY_NAME: "env"
     steps:
     - name: expect success
+      if: failure()
       run: ls
     - name: expect skipped
       if: env.MY_NAME != 'env'
