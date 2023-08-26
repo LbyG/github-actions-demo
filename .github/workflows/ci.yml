@@ -9,10 +9,13 @@ jobs:
     env:
       MY_NAME: "env"
     steps:
-    - name: failed step
+    - name: expect success
       run: ls
-    - name: test success() default
+    - name: expect skipped
       if: env.MY_NAME != 'env'
       run: ls
-    - name: test success() default when expression not status-check-func
+    - name: test skipped step for default success()
+      run: ls
+    - name: test skipped step for success()
+      if: success()
       run: ls
