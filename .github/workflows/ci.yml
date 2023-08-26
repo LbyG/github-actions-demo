@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MY_NAME: "env"
-    if: always() && success()
     steps:
     - name: test always() cancelled
+      if: always() && success()
       run: sleep 300s
