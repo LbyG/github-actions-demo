@@ -12,7 +12,7 @@ jobs:
     - name: failed step
       run: ls
     - name: test success() default
-      if: env.MY_NAME == 'env'
+      if: env.MY_NAME != 'env'
       run: ls
     - name: test success() default when expression not status-check-func
       run: ls
