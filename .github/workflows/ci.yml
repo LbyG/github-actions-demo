@@ -9,6 +9,11 @@ jobs:
     env:
       MY_NAME: "env"
     steps:
-    - name: test always() cancelled
-      if: always() && success()
-      run: sleep 300s
+    - name: error
+      run: lssss
+    - name: success
+      if: failure()
+      run: ls
+    - name: success
+      if: failure()
+      run: ls
