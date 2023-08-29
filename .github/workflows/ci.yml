@@ -7,13 +7,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     env:
-      MY_NAME: "env"
+      NAME: ${{ vars.MY_NAME }}
     steps:
-    - name: error
-      run: lssss
-    - name: success
-      if: failure()
-      run: ls
-    - name: success
-      if: failure()
-      run: ls
+    - name: vars print
+      run: echo "NAME=$NAME"
