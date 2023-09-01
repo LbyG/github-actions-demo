@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NAME: ${{ vars.MY_NAME }}
+      TO_JSON: ${{ toJSON(['csharp', 'javascript']) }}
     steps:
+      - run: echo TO_JSON=$TO_JSON
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
