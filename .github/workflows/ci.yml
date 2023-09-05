@@ -6,7 +6,7 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - name: step1
-        timeout-minutes: 3
         run: sleep 300s
