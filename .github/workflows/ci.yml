@@ -13,3 +13,12 @@ jobs:
       - name: step2
         if: cancelled()
         run: sleep 12s
+      - name: step3
+        if: always()
+        run: sleep 12s
+      - name: step4
+        if: success()
+        run: sleep 12s
+      - name: step5
+        if: failure()
+        run: sleep 12s
