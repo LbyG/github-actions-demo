@@ -9,6 +9,7 @@ jobs:
     timeout-minutes: 3
     steps:
       - name: step1
+        if: always()
         run: sleep 300s
       - name: step2
         if: cancelled()
