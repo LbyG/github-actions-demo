@@ -6,14 +6,14 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 1
     steps:
       - name: step1
         if: always()
-        run: sleep 30s
+        run: sleep 120s
       - name: step2
         if: cancelled()
-        run: sleep 12s
+        run: sleep 120s
       - name: step3
         if: always()
-        run: sleep 12s
+        run: sleep 120s
