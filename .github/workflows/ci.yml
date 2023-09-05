@@ -7,28 +7,6 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: lsssss
-  job2:
-    runs-on: ubuntu-latest
-    needs: [job1]
-    if: success()
-    steps:
-      - run: ls
-  job3:
-    runs-on: ubuntu-latest
-    needs: [job1]
-    if: failure()
-    steps:
-      - run: ls
-  job4:
-    runs-on: ubuntu-latest
-    needs: [job1]
-    if: always()
-    steps:
-      - run: ls
-  job5:
-    runs-on: ubuntu-latest
-    needs: [job1]
-    if: cancelled()
-    steps:
-      - run: ls
+      - name: step1
+        timeout-minutes: 3
+        run: sleep 300s
