@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: step1
         if: always()
-        run: sleep 300s
+        run: sleep 30s
       - name: step2
         if: cancelled()
         run: sleep 12s
