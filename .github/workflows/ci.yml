@@ -18,9 +18,8 @@ jobs:
         run: sleep 1s
   job3:
     runs-on: ubuntu-latest
-    env:
-      TEST_NEEDS: "${{ vars.TEST_NEEDS }}"
+    needs: "${{ 'job1' }}"
     steps:
       - name: step1
         if: always()
-        run: echo TEST_NEEDS=$TEST_NEEDS
+        run: sleep 1s
