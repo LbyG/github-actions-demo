@@ -6,7 +6,7 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    timeout-minutes: 1
+    timeout-minutes: "${{ 'xxxx' }}"
     steps:
       - name: step1
         if: always()
