@@ -9,52 +9,56 @@ jobs:
     steps:
       - name: step1
         run: |
-          sleep 1s
+          sleep 10s
           echo "hello world 1"
-          sleep 1s
+          sleep 10s
           echo "hello world 2"
-          sleep 1s
+          sleep 10s
           echo "hello world 3"
-          sleep 1s
+          sleep 10s
           echo "hello world 4"
-          sleep 1s
+          sleep 10s
           echo "hello world 5"
-          sleep 1s
+          sleep 10s
           echo "hello world 6"
-          sleep 1s
+          sleep 10s
           echo "hello world 7"
-          sleep 1s
+          sleep 10s
           echo "hello world 8"
-          sleep 1s
+          sleep 10s
           echo "hello world 9"
-          sleep 1s
+          sleep 10s
           echo "hello world 10"
-          sleep 1s
+          sleep 10s
           echo "hello world 11"
-          sleep 1s
+          sleep 10s
           echo "hello world 12"
       - name: step2
         run: |
-          sleep 1s
+          sleep 10s
           echo "hello world 1"
-          sleep 1s
+          sleep 10s
           echo "hello world 2"
-          sleep 1s
+          sleep 10s
           echo "hello world 3"
-          sleep 1s
+          sleep 10s
           echo "hello world 4"
-          sleep 1s
+          sleep 10s
           echo "hello world 5"
-          sleep 1s
+          sleep 10s
           echo "hello world 6"
-          sleep 1s
+          sleep 10s
           echo "hello world 7"
-          sleep 1s
+          sleep 10s
           echo "hello world 8"
-          sleep 1s
+          sleep 10s
           echo "hello world 9"
-          sleep 1s
+          sleep 10s
           echo "hello world 10"
+          sleep 10s
+          echo "hello world 11"
+          sleep 10s
+          echo "hello world 12"
           sleep 1s
           echo "hello world 11"
           sleep 1s
