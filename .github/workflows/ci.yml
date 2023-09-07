@@ -8,17 +8,54 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step1
-        continue-on-error: true
-        run: lsssss
+        run: |
+          sleep 1s
+          echo "hello world 1"
+          sleep 1s
+          echo "hello world 2"
+          sleep 1s
+          echo "hello world 3"
+          sleep 1s
+          echo "hello world 4"
+          sleep 1s
+          echo "hello world 5"
+          sleep 1s
+          echo "hello world 6"
+          sleep 1s
+          echo "hello world 7"
+          sleep 1s
+          echo "hello world 8"
+          sleep 1s
+          echo "hello world 9"
+          sleep 1s
+          echo "hello world 10"
+          sleep 1s
+          echo "hello world 11"
+          sleep 1s
+          echo "hello world 12"
       - name: step2
-        if: success()
-        run: ls
-      - name: step3
-        if: failure()
-        run: ls
-      - name: step4
-        if: always()
-        run: ls
-      - name: step5
-        if: cancelled()
-        run: ls
+        run: |
+          sleep 1s
+          echo "hello world 1"
+          sleep 1s
+          echo "hello world 2"
+          sleep 1s
+          echo "hello world 3"
+          sleep 1s
+          echo "hello world 4"
+          sleep 1s
+          echo "hello world 5"
+          sleep 1s
+          echo "hello world 6"
+          sleep 1s
+          echo "hello world 7"
+          sleep 1s
+          echo "hello world 8"
+          sleep 1s
+          echo "hello world 9"
+          sleep 1s
+          echo "hello world 10"
+          sleep 1s
+          echo "hello world 11"
+          sleep 1s
+          echo "hello world 12"
