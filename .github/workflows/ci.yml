@@ -8,15 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step1
-        run: ls
+        run: sleep 120s
       - name: step2
-        if: false
-        run: ls
-  job2:
-    runs-on: ubuntu-latest
-    if: false
-    steps:
-      - name: step1
-        run: ls
-      - name: step2
+        timeout-minutes: 1
+        run: sleep 120s
+      - name: step3
+        if: failure()
         run: ls
