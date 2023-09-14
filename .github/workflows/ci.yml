@@ -15,4 +15,8 @@ jobs:
         if: env.TEST
         run: ls
       - name: step3
+        if: env.TEST == false
+        run: ls
+      - name: step4
+        if: env.TEST == 'false'
         run: ls
