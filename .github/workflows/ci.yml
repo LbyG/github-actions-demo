@@ -6,20 +6,15 @@ on:
 jobs:
   job1:
     env:
-      TEST: false
+      VARF: false
+      VART: true
     runs-on: ubuntu-${{ 'latest' }}
     steps:
-      - name: step1
-        run: ls
-      - name: step2
-        if: env.TEST
-        run: ls
-      - name: step3
-        if: fromJSON(env.TEST)
-        run: ls
-      - name: step4
-        if: env.TEST == false
-        run: ls
-      - name: step5
-        if: env.TEST == 'false'
-        run: ls
+      - name: Var test
+        run: |
+          echo "VART=${{ env.VARF }}"
+          echo "VART=${{ env.VART }}"
+          echo "VARF && VART=${{ env.VARF && env.VART }}"
+          echo "VARF || VART=${{ env.VARF || env.VART }}"
+          echo "!VARF=${{ ! env.VARF }}"
+          echo "!!VART=${{ !! env.VART }}"
