@@ -5,6 +5,8 @@ on:
       - master
 jobs:
   job1:
+    env:
+      TEST: true
     runs-on: ubuntu-${{ 'latest' }}
     steps:
       - name: step1
