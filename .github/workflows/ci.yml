@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Var test
         run: |
-          echo "VARF==false = ${{ VARF==false }}"
-          echo "VARF=='false' = ${{ VARF=='false' }}"
-          echo "VART==true = ${{ VART==true }}"
-          echo "VART=='true' = ${{ VART=='true' }}"
+          echo "VARF==false = ${{ env.VARF==false }}"
+          echo "VARF=='false' = ${{ env.VARF=='false' }}"
+          echo "VART==true = ${{ env.VART==true }}"
+          echo "VART=='true' = ${{ env.VART=='true' }}"
