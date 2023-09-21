@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Var test
         run: |
+          echo "json is {\"name\": \"ztl\"}"
           echo "VARF==false = ${{ env.VARF==false }}"
           echo "VARF=='false' = ${{ env.VARF=='false' }}"
           echo "VART==true = ${{ env.VART==true }}"
