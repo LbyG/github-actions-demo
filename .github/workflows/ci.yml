@@ -11,9 +11,4 @@ jobs:
     runs-on: ubuntu-${{ 'latest' }}
     steps:
       - name: Var test
-        run: |
-          echo "json is {\"name\": \"ztl\"}"
-          echo "VARF==false = ${{ env.VARF==false }}"
-          echo "VARF=='false' = ${{ env.VARF=='false' }}"
-          echo "VART==true = ${{ env.VART==true }}"
-          echo "VART=='true' = ${{ env.VART=='true' }}"
+        run: java -version
