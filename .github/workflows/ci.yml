@@ -22,8 +22,3 @@ jobs:
     steps:
     - name: Install and Build
       run: sleep 10s
-    needs: [build-and-deploy2, build-and-deploy3]
-    if: cancelled()
-    steps:
-    - name: Install and Build
-      run: sleep 30s
