@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install and Build
-      run: sleep 10s
+      run: sleep 20s
   build-and-deploy1:
     runs-on: ubuntu-latest
     needs: [build-and-deploy]
