@@ -13,7 +13,9 @@ jobs:
     steps:
       - id: step1
         name: test
-        run: echo "test=hello" >> "$GITHUB_OUTPUT"
+        env: 
+          Map: '{"aaaa": "aaa_test", "bbbb": "bbb_test", "ccccc": "ccc_test"}'
+        run: echo "map=$Map"
       - id: step2
         name: test
         run: echo "test=world" >> "$GITHUB_OUTPUT"
