@@ -14,7 +14,7 @@ jobs:
       - id: step1
         name: test
         env: 
-          Map: '{"aaaa": "aaa_test", "bbbb": "bbb_test", "ccccc": "ccc_test"}'
+          Map: '{"aaaa": "aaa_test", "bbbb": "bbb_test", "ccccc": "${{vars.MY_NAME}}" }'
         run: echo "map=$Map"
       - id: step2
         name: test
