@@ -17,7 +17,7 @@ jobs:
         name: test
         env: 
           Map: $TEST_NAME
-        run: echo "map=${{env.Map}}"
+        run: echo "map=${{env.Map}}" && echo -e "import os" >> test1.py && echo -e "print(os.environ['PATH'])" >> test1.py && python test1.py
       - id: step2
         name: test
         run: echo "test=world" >> "$GITHUB_OUTPUT"
