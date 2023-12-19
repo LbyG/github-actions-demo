@@ -17,7 +17,7 @@ jobs:
         name: test
         env: 
           Map: $TEST_NAME
-        run: echo "map=$Map"
+        run: echo "map=${{env.Map}}"
       - id: step2
         name: test
         run: echo "test=world" >> "$GITHUB_OUTPUT"
