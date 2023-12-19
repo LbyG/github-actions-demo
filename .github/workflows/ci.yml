@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+env:
+  TEST_NAME: zhangtanglei
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -14,7 +16,7 @@ jobs:
       - id: step1
         name: test
         env: 
-          Map: '{"aaaa": "aaa_test", "bbbb": "bbb_test", "ccccc": "${{vars.MY_NAME}}" }'
+          Map: $TEST_NAME
         run: echo "map=$Map"
       - id: step2
         name: test
