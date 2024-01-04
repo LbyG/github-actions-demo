@@ -7,7 +7,6 @@ env:
   TEST_ENV_BOOL: false
 jobs:
   job1:
-    if: ${{env.TEST_ENV_BOOL}}
     runs-on: ubuntu-latest
     # Map a step output to a job output
     outputs:
@@ -15,6 +14,7 @@ jobs:
       output2: ${{ steps.step2.outputs.test }}
     steps:
       - id: step1
+        if: ${{env.TEST_ENV_BOOL}}
         name: test
         env: 
           Map: $TEST_NAME
