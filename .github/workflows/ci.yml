@@ -4,9 +4,10 @@ on:
     branches:
       - master
 env:
-  TEST_NAME: ${{github.action}}
+  TEST_ENV_BOOL: false
 jobs:
   job1:
+    if: ${{env.TEST_ENV_BOOL}}
     runs-on: ubuntu-latest
     # Map a step output to a job output
     outputs:
