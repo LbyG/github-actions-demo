@@ -11,4 +11,4 @@ jobs:
         uses: ./.github/actions/test_ts/
         with:
           param1: 10
-          param1: ztl
+          param2: ztl
