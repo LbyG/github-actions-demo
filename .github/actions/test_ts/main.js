@@ -6,3 +6,17 @@ console.log(`para1 is ${para1}, para2 is ${para2}`);
 
 // 以下是本地执行的代码
 console.log(`11111111111`);
+
+const ls = require('child_process').exec('ls', ['-lh', '/usr']);
+
+ls.stdout.on('data', (data) => {
+  console.log(`stdout: ${data}`);
+});
+
+ls.stderr.on('data', (data) => {
+  console.log(`stderr: ${data}`);
+});
+
+ls.on('close', (code) => {
+  console.log(`child process exited with code ${code}`);
+});
