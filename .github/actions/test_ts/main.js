@@ -21,6 +21,10 @@ main_sleep2.on('exit', (code) => {
   console.log(`main_sleep2 child process exited with code ${code}`);
 });
 
+await new Promise( (resolve) => {
+    main_sleep2.on('exit', resolve)
+})
+
 // 以下是本地执行的代码
 console.log(`11111111111`);
 
