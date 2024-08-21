@@ -1,0 +1,12 @@
+name: "example action"
+description: "This is an example action"
+inputs:
+  param1:
+    description: "The first param of this action"
+    required: true  #必传参数必须要设置required为true
+  param2:
+    description: "The second param of this action"
+    required: true
+runs:
+  using: node16
+  main: main.js
