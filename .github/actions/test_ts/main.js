@@ -7,23 +7,26 @@ console.log(`para1 is ${para1}, para2 is ${para2}`);
 // 以下是本地执行的代码
 console.log(`2222222222`);
 
-const main_sleep2 = require('child_process').exec('python src/main_sleep2.py');
+async function asyncFunc() {
+    const main_sleep2 = require('child_process').exec('python src/main_sleep2.py');
 
-main_sleep2.stdout.on('data', (data) => {
-  console.log(`main_sleep2.stdout: ${data}`);
-});
+    main_sleep2.stdout.on('data', (data) => {
+    console.log(`main_sleep2.stdout: ${data}`);
+    });
 
-main_sleep2.stderr.on('data', (data) => {
-  console.log(`main_sleep2.stderr: ${data}`);
-});
+    main_sleep2.stderr.on('data', (data) => {
+    console.log(`main_sleep2.stderr: ${data}`);
+    });
 
-main_sleep2.on('exit', (code) => {
-  console.log(`main_sleep2 child process exited with code ${code}`);
-});
+    main_sleep2.on('exit', (code) => {
+    console.log(`main_sleep2 child process exited with code ${code}`);
+    });
 
-await new Promise( (resolve) => {
-    main_sleep2.on('exit', resolve)
-})
+    await new Promise( (resolve) => {
+        main_sleep2.on('exit', resolve)
+    })
+}
+asyncFunc()
 
 // 以下是本地执行的代码
 console.log(`11111111111`);
