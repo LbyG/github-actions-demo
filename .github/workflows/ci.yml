@@ -8,17 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step1
-        continue-on-error: true
-        run: lsssss
-      - name: step2
-        if: success()
-        run: ls
-      - name: step3
-        if: failure()
-        run: ls
-      - name: step4
-        if: always()
-        run: ls
-      - name: step5
-        if: cancelled()
-        run: ls
+        uses: ./.github/actions/test_ts/
+        with:
+          param1: 10
+          param1: ztl
