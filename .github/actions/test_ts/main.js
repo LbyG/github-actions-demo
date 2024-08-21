@@ -4,10 +4,10 @@ let para2 = process.env['INPUT_PARA2'];
 // 输出到环境中
 console.log(`para1 is ${para1}, para2 is ${para2}`);
 
-// 以下是本地执行的代码
-console.log(`2222222222`);
-
 async function asyncFunc() {
+    // 以下是本地执行的代码
+    console.log(`***2222222222`);
+
     const main_sleep2 = require('child_process').exec('python src/main_sleep2.py');
 
     main_sleep2.stdout.on('data', (data) => {
@@ -25,22 +25,22 @@ async function asyncFunc() {
     await new Promise( (resolve) => {
         main_sleep2.on('exit', resolve)
     })
+
+    // 以下是本地执行的代码
+    console.log(`****111111111111111111`);
+    
+    const main_sleep1 = require('child_process').exec('python src/main_sleep1.py');
+    
+    main_sleep1.stdout.on('data', (data) => {
+      console.log(`main_sleep1.stdout: ${data}`);
+    });
+    
+    main_sleep1.stderr.on('data', (data) => {
+      console.log(`main_sleep1.stderr: ${data}`);
+    });
+    
+    main_sleep1.on('exit', (code) => {
+      console.log(`main_sleep1 child process exited with code ${code}`);
+    });
 }
 asyncFunc()
-
-// 以下是本地执行的代码
-console.log(`11111111111`);
-
-const main_sleep1 = require('child_process').exec('python src/main_sleep1.py');
-
-main_sleep1.stdout.on('data', (data) => {
-  console.log(`main_sleep1.stdout: ${data}`);
-});
-
-main_sleep1.stderr.on('data', (data) => {
-  console.log(`main_sleep1.stderr: ${data}`);
-});
-
-main_sleep1.on('exit', (code) => {
-  console.log(`main_sleep1 child process exited with code ${code}`);
-});
